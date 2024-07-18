@@ -9,34 +9,29 @@ import { Button } from "@/components/ui/button";
 import useThemeEffect from "@/lib/usethemeeffect";
 import { PiVideo, PiVideoFill } from "react-icons/pi";
 import { HiOutlineUserCircle, HiUserCircle } from "react-icons/hi2";
-// import darkthemelogo from "@/../../public/Arouze-darktheme-icon.png";
-// import lightthemelogo from "@/../../public/Arouze-lighttheme-icon.png";
 import { MdOutlineVerifiedUser, MdVerifiedUser } from "react-icons/md";
-
+import logo from '../../public/marineassurelogo.png'
 export const UserSidebar: React.FC<{ onClose?: () => void }> = ({
   onClose,
 }) => {
   const params = usePathname();
   const splittedName = params.split("/");
   const isDark = useThemeEffect();
-  // State to manage hover state for each button
+  console.log(isDark)
   const [accountsHovered, setAccountsHovered] = useState(false);
   const [creatorPagesHovered, setCreatorPagesHovered] = useState(false);
   const [generateVideosHovered, setGenerateVideosHovered] = useState(false);
   const [logoutHovered, setLogoutHovered] = useState(false);
 
   return (
-    <div className="fixed lg:w-[230px] border-r left-0 px-4 py-5 lg:h-[100vh] h-[93vh] flex flex-col justify-between">
+    <div className="fixed lg:w-[230px] lg:border-r left-0 px-4 py-5 lg:h-[102vh] h-[93vh] flex flex-col justify-between">
       <nav className="grid gap-0 text-sm text-muted-foreground w-full lg:mt-14 mt-1">
         <div className="flex flex-row justify-between mb-3">
-          <div className="lg:hidden block  -mt-3">
-            {/* <h2 className={`${isDark ? "text-white" : "text-black"} text-2xl font-semibold tracking-tight`}>
-            Arouze
-            </h2> */}
+          <div className="lg:hidden block  ">
             {isDark ? (
-              <Image src={"/vercel.svg"} alt="logo" width={130} height={130} />
+              <Image src={logo} alt="logo" width={100} height={100} className="-mt-5" />
             ) : (
-              <Image src={"/vercel.svg"} alt="logo" width={130} height={130} />
+              <Image src={logo} alt="logo" width={100} height={100} className="-mt-5" />
             )}
           </div>
           <div className="lg:hidden block ">
@@ -125,7 +120,7 @@ export const UserSidebar: React.FC<{ onClose?: () => void }> = ({
           </Button>
         </Link>
       </nav>
-      <div className=" lg:hidden block ">
+      <div >
         <form>
           <Button
             variant={"ghost"}

@@ -8,6 +8,7 @@ export const ThemeChanger: FC<{ withText?: boolean }> = ({
   withText = true,
 }) => {
   const { theme, setTheme } = useTheme();
+  console.log(theme)
 
   return (
     <div>
