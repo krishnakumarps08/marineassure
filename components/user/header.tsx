@@ -5,12 +5,11 @@ import { useState } from "react";
 import { logout } from "@/app/user/actions";
 import { Button } from "@/components/ui/button";
 import useThemeEffect from "@/lib/usethemeeffect";
-// import logo from "@/../../public/Arouze-icon.png";
+
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { UserSidebar } from "./sidebar";
-import { ThemeChanger } from "../../components/icons/themeicon";
-// import darkthemelogo from "@/../../public/Arouze-darktheme-icon.png";
-// import lightthemelogo from "@/../../public/Arouze-lighttheme-icon.png";
+import { ThemeChanger } from "../theme/theme-changer";
+import logo from '../../public/marineassurelogo.png'
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 
 export const UserHeader = () => {
@@ -21,6 +20,7 @@ export const UserHeader = () => {
   };
   // Determine the background color based on the theme
   const isDarkTheme = useThemeEffect();
+  console.log(isDarkTheme)
   return (
     <header
       className={`fixed w-full top-0 h-16 items-start gap-4 border-b px-4 md:px-6 z-10 ${
@@ -32,14 +32,14 @@ export const UserHeader = () => {
           {isDarkTheme ? (
             <div>
               <Image
-                src={"/vercel.svg"}
+                src={logo}
                 alt="logo"
-                width={130}
-                height={130}
-                className="lg:block hidden"
+                width={80}
+                height={80}
+                className="lg:block hidden "
               />
               <Image
-                src={"/vercel.svg"}
+                src={logo}
                 alt="logo"
                 width={40}
                 height={40}
@@ -48,20 +48,20 @@ export const UserHeader = () => {
             </div>
           ) : (
             <div>
-              {/* <Image
-                src={"/vercel.svg"}
+              <Image
+                src={logo}
                 alt="logo"
-                width={130}
-                height={130}
+                width={80}
+                height={80}
                 className="lg:block hidden"
               />
               <Image
-                src={"/vercel.svg"}
+                src={logo}
                 alt="logo"
                 width={40}
                 height={40}
                 className="lg:hidden block"
-              /> */}
+              />
             </div>
           )}
         </div>

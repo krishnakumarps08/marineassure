@@ -5,9 +5,7 @@ import { useTheme } from "next-themes";
 
 const useThemeEffect = (): boolean => {
   const { theme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState<string | undefined>(
-    undefined
-  );
+  const [currentTheme, setCurrentTheme] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     setCurrentTheme(theme);
